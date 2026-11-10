@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milica &amp; Željko — Naše venčanje</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ZVEZDICE KOJE LEBDE PREKO CELE STRANICE -->
+  <div class="floating-stars" aria-hidden="true">
+    <span class="star-particle">✦</span>
+    <span class="star-particle">✦</span>
+    <span class="star-particle">✦</span>
+    <span class="star-particle">✦</span>
+    <span class="star-particle">✦</span>
+    <span class="star-particle">✦</span>
+  </div>
+
+  <!-- NASLOVNA STRANA: KOVERTA SA VOŠTANIM PEČATOM, KLIKOM SE OTVARA -->
+  <section class="envelope-scene" id="envelopeScene">
+    <div class="envelope-wrap">
+      <p class="cover-kicker">Poziv na venčanje</p>
+
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Otvori pismo">
+        <div class="envelope-body"></div>
+        <div class="envelope-flap" id="envelopeFlap"></div>
+        <div class="seal" id="seal">
+          <span class="seal-emblem">M&nbsp;Ž</span>
+        </div>
+        <!-- prava fotografija koverte: sačuvaj je kao images/envelope.png da zameni CSS crtež -->
+        <img
+          class="envelope-photo"
+          id="envelopePhoto"
+          src="images/envelope.png"
+          alt="Koverta sa voštanim pečatom"
+          onerror="this.style.display='none'"
+        />
+      </div>
+
+      <p class="cover-names">Milica &amp; Željko</p>
+      <p class="hint" id="hint">Dodirnite pečat da otvorite pismo</p>
+    </div>
+  </section>
+
+  <!-- SAJT SA INFORMACIJAMA O VENČANJU -->
+  <main class="invitation-page" id="invitationPage" aria-hidden="true">
+
+    <!-- prava fotografija: sačuvaj je kao images/couple.jpg da zameni placeholder -->
+    <div class="hero-photo">
+      <div class="hero-placeholder">
+        <span class="photo-icon">📷</span>
+        <p>Ovde ide fotografija</p>
+      </div>
+      <img
+        class="hero-real"
+        id="couplePhoto"
+        src="images/couple.jpg"
+        alt="Milica i Željko"
+        onerror="this.remove()"
+      />
+      <div class="hero-fade"></div>
+      <div class="hero-overlay mt-4">
+        <h1 class="hero-names">Milica <span class="amp">&amp;</span> Željko</h1>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <p class="ornament"><span class="star">✦</span> ❧ <span class="star">✦</span></p>
+
+      <p class="kicker">Sa radošću u srcu vas obaveštavamo</p>
+
+      <p class="lead">
+        spremni smo da izgovorimo sudbonosno „da“
+        i želimo da podelimo sve informacije o našem venčanju sa vama.
+      </p>
+
+      <div class="divider"><span></span><i>✦</i><span></span></div>
+
+      <section class="calendar" aria-label="Datum venčanja: 25. april 2027.">
+        <div class="calendar-card">
+          <div class="calendar-rings" aria-hidden="true"><span></span><span></span></div>
+          <div class="calendar-head">
+            <p class="calendar-month">April</p>
+            <p class="calendar-year">2027</p>
+          </div>
+          <!-- april 2027. počinje u četvrtak (3 prazna polja), 25. je nedelja -->
+          <div class="calendar-grid" aria-hidden="true">
+            <span class="calendar-dow">Pon</span><span class="calendar-dow">Uto</span><span class="calendar-dow">Sre</span><span class="calendar-dow">Čet</span><span class="calendar-dow">Pet</span><span class="calendar-dow">Sub</span><span class="calendar-dow">Ned</span>
+            <span></span><span></span><span></span>
+            <span>1</span><span>2</span><span>3</span><span>4</span>
+            <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
+            <span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+            <span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span class="calendar-day-wedding">25</span>
+            <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+          </div>
+          <p class="calendar-caption">Nedelja, 25. april 2027.</p>
+        </div>
+      </section>
+
+      <div class="divider"><span></span><i>✦</i><span></span></div>
+
+      <section class="schedule">
+        <h2 class="section-title">Raspored dana</h2>
+        <ul class="schedule-list">
+          <li><span class="schedule-when"><span class="schedule-icon">🥂</span><span class="schedule-time">16:00</span></span><span class="schedule-event">Doček gostiju</span></li>
+          <li><span class="schedule-when"><span class="schedule-icon">💍</span><span class="schedule-time">17:00</span></span><span class="schedule-event">Građansko venčanje</span></li>
+          <li><span class="schedule-when"><span class="schedule-icon">🎉</span><span class="schedule-time">17:30</span></span><span class="schedule-event">Žurka!</span></li>
+        </ul>
+      </section>
+
+      <div class="divider"><span></span><i>✦</i><span></span></div>
+
+      <section class="details-block">
+        <h2 class="section-title">Detalji venčanja</h2>
+        <div class="details">
+          <div class="detail">
+            <span class="detail-icon">📅</span>
+            <p class="detail-label">Datum</p>
+            <p class="detail-value" id="weddingDateText">25. April 2027.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-icon">🕐</span>
+            <p class="detail-label">Vreme</p>
+            <p class="detail-value">16:00h</p>
+          </div>
+          <div class="detail">
+            <span class="detail-icon">📍</span>
+            <p class="detail-label">Mesto</p>
+            <p class="detail-value">Restoran Perla, Niš</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"><span></span><i>✦</i><span></span></div>
+
+      <section class="countdown-block">
+        <h2 class="section-title">Do našeg venčanja:</h2>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-days">00</span>
+            <span class="countdown-label">dana</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-hours">00</span>
+            <span class="countdown-label">sati</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-minutes">00</span>
+            <span class="countdown-label">minuta</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-seconds">00</span>
+            <span class="countdown-label">sekundi</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"><span></span><i>✦</i><span></span></div>
+
+      <section class="location">
+        <h2 class="section-title">📍 Lokacija</h2>
+        <p class="location-text">Restoran Perla, Niš, Dragoljuba Jovanovića Draže, Niš</p>
+        <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=Restoran%20Perla%2C%20Dragoljuba%20Jovanovi%C4%87a%20Dra%C5%BEe%2C%20Ni%C5%A1" target="_blank" rel="noopener">Otvori na mapi ↗</a>
+      </section>
+
+      <div class="divider"><span></span><i>✦</i><span></span></div>
+
+      <section class="rsvp">
+        <h2 class="section-title">Potvrda dolaska</h2>
+        <p class="rsvp-text">Molimo vas da potvrdite dolazak do <strong>1. aprila</strong>.</p>
+        <div class="rsvp-contacts">
+          <!-- upiši prave brojeve u tekst i u href="tel:..." -->
+          <a class="rsvp-contact" href="tel:+381600000000">
+            <span class="rsvp-name">Željko</span>
+            <span class="rsvp-phone">060 000 0000</span>
+          </a>
+          <a class="rsvp-contact" href="tel:+381600000000">
+            <span class="rsvp-name">Milica</span>
+            <span class="rsvp-phone">060 000 0000</span>
+          </a>
+        </div>
+      </section>
+
+      <p class="ornament"><span class="star">✦</span> ❧ <span class="star">✦</span></p>
+
+      <p class="signature">Radujemo se da naš poseban dan proslavimo u vašem društvu</p>
+      <p class="signature">Porodice Živković &amp; Stanojević</p>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

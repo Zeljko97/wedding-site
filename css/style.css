@@ -17,7 +17,9 @@
   --text-dark: #c7a778;
 
   /* zrnasta tekstura hartije (SVG šum), preslikana sa fotografije stare koverte */
-  --paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.45 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* PNG umesto SVG feTurbulence šuma: Safari (iPhone) je SVG šum crtao mnogo jače,
+     pa je bela stranica izgledala sivo, a koverta tamno */
+  --paper-grain: url("../images/grain.png");
 
   /* linije preloma koverte (X šara ka pečatu), preslikane sa fotografije */
   --envelope-creases: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cg stroke-linecap='round'%3E%3Cline x1='2' y1='2' x2='200' y2='150' stroke='rgba(255,255,255,0.22)' stroke-width='2'/%3E%3Cline x1='0' y1='0' x2='198' y2='148' stroke='rgba(60,42,24,0.45)' stroke-width='3'/%3E%3Cline x1='398' y1='2' x2='200' y2='150' stroke='rgba(255,255,255,0.18)' stroke-width='2'/%3E%3Cline x1='400' y1='0' x2='202' y2='148' stroke='rgba(60,42,24,0.45)' stroke-width='3'/%3E%3Cline x1='2' y1='298' x2='200' y2='150' stroke='rgba(255,255,255,0.18)' stroke-width='2'/%3E%3Cline x1='0' y1='300' x2='198' y2='152' stroke='rgba(60,42,24,0.4)' stroke-width='3'/%3E%3Cline x1='398' y1='298' x2='200' y2='150' stroke='rgba(255,255,255,0.18)' stroke-width='2'/%3E%3Cline x1='400' y1='300' x2='202' y2='152' stroke='rgba(60,42,24,0.4)' stroke-width='3'/%3E%3C/g%3E%3C/svg%3E");
@@ -272,10 +274,8 @@ body {
   position: relative;
   min-height: 100vh;
   width: 100%;
+  /* čista bela pozadina (tekstura preko bele ionako nije vidljiva u overlay režimu) */
   background-color: var(--paper-cream);
-  background-image: var(--paper-grain);
-  background-blend-mode: overlay;
-  background-size: 260px 260px;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease, transform 1s ease;
